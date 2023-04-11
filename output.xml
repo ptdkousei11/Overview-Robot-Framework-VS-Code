@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.3 on win32)" generated="20230411 09:50:09.809" rpa="true" schemaversion="3">
+<suite id="s1" name="Myfirstrobot" source="d:\ptdat-batch40\Robot FW\Source\myfirstrobot.robot">
+<test id="s1-t1" name="First Tasks" line="5">
+<kw name="Log" library="BuiltIn">
+<arg>Hello World</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230411 09:50:09.853" level="INFO">Hello World</msg>
+<status status="PASS" starttime="20230411 09:50:09.852" endtime="20230411 09:50:09.857"/>
+</kw>
+<status status="PASS" starttime="20230411 09:50:09.850" endtime="20230411 09:50:09.860"/>
+</test>
+<doc>My first robot</doc>
+<status status="PASS" starttime="20230411 09:50:09.817" endtime="20230411 09:50:09.883"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Myfirstrobot">Myfirstrobot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
