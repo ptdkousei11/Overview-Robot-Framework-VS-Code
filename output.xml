@@ -1,40 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230411 10:25:27.704" rpa="true" schemaversion="3">
-<suite id="s1" name="Intranet" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\intranet.robot">
-<test id="s1-t1" name="Insert the sales data for the week and export it as a PDF" line="6">
-<kw name="Open the intranet website">
-<kw name="Open Available Browser" library="RPA.Browser.Selenium">
-<arg>https://robotsparebinindustries.com/</arg>
-<doc>Attempts to open a browser on the user's device from a set of
-supported browsers. Automatically downloads a corresponding webdriver
-if none is already installed.</doc>
-<msg timestamp="20230411 10:25:29.890" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<msg timestamp="20230411 10:25:29.927" level="INFO">====== WebDriver manager ======</msg>
-<msg timestamp="20230411 10:25:45.396" level="INFO">Creating an instance of the Firefox WebDriver.</msg>
-<msg timestamp="20230411 10:25:45.403" level="INFO">====== WebDriver manager ======</msg>
-<msg timestamp="20230411 10:26:02.772" level="INFO">Creating an instance of the Firefox WebDriver.</msg>
-<msg timestamp="20230411 10:26:26.352" level="INFO">Created Firefox browser with arguments: </msg>
-<msg timestamp="20230411 10:26:26.352" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;HTTPSConnectionPool(host='chromedriver.storage.googleapis.com', port=443): Max retries exceeded with url: /112.0.5615/chromedriver_win32.zip (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1002)')))&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Firefox&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: 'geckodriver' executable needs to be in PATH. 
-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Firefox&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg timestamp="20230411 10:26:26.353" level="INFO">Opening url 'https://robotsparebinindustries.com/'</msg>
-<status status="PASS" starttime="20230411 10:25:29.882" endtime="20230411 10:26:30.126"/>
+<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230411 11:33:24.290" rpa="false" schemaversion="3">
+<suite id="s1" name="Ex1" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\ex1.robot">
+<test id="s1-t1" name="Verify if any element in array contains 'tables'" line="27">
+<for flavor="IN">
+<var>${i}</var>
+<value>@{list}</value>
+<iter>
+<var name="${i}">fruits</var>
+<if>
+<branch type="IF" condition="'${i}' == 'tables'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Yes, there is at least one match!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230411 11:33:24.739" endtime="20230411 11:33:24.739"/>
 </kw>
-<status status="PASS" starttime="20230411 10:25:29.881" endtime="20230411 10:26:30.127"/>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${a}</var>
+<arg>1</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="NOT RUN" starttime="20230411 11:33:24.739" endtime="20230411 11:33:24.740"/>
 </kw>
-<status status="PASS" starttime="20230411 10:25:29.869" endtime="20230411 10:26:30.129"/>
+<status status="NOT RUN" starttime="20230411 11:33:24.738" endtime="20230411 11:33:24.740"/>
+</branch>
+<status status="PASS" starttime="20230411 11:33:24.738" endtime="20230411 11:33:24.740"/>
+</if>
+<status status="PASS" starttime="20230411 11:33:24.738" endtime="20230411 11:33:24.740"/>
+</iter>
+<iter>
+<var name="${i}">flower</var>
+<if>
+<branch type="IF" condition="'${i}' == 'tables'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Yes, there is at least one match!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230411 11:33:24.741" endtime="20230411 11:33:24.742"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${a}</var>
+<arg>1</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="NOT RUN" starttime="20230411 11:33:24.742" endtime="20230411 11:33:24.742"/>
+</kw>
+<status status="NOT RUN" starttime="20230411 11:33:24.741" endtime="20230411 11:33:24.742"/>
+</branch>
+<status status="PASS" starttime="20230411 11:33:24.741" endtime="20230411 11:33:24.742"/>
+</if>
+<status status="PASS" starttime="20230411 11:33:24.741" endtime="20230411 11:33:24.742"/>
+</iter>
+<iter>
+<var name="${i}">vegetables</var>
+<if>
+<branch type="IF" condition="'${i}' == 'tables'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Yes, there is at least one match!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230411 11:33:24.743" endtime="20230411 11:33:24.744"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${a}</var>
+<arg>1</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="NOT RUN" starttime="20230411 11:33:24.744" endtime="20230411 11:33:24.744"/>
+</kw>
+<status status="NOT RUN" starttime="20230411 11:33:24.743" endtime="20230411 11:33:24.744"/>
+</branch>
+<status status="PASS" starttime="20230411 11:33:24.743" endtime="20230411 11:33:24.744"/>
+</if>
+<status status="PASS" starttime="20230411 11:33:24.743" endtime="20230411 11:33:24.744"/>
+</iter>
+<iter>
+<var name="${i}">apple</var>
+<if>
+<branch type="IF" condition="'${i}' == 'tables'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Yes, there is at least one match!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230411 11:33:24.745" endtime="20230411 11:33:24.745"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${a}</var>
+<arg>1</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="NOT RUN" starttime="20230411 11:33:24.746" endtime="20230411 11:33:24.746"/>
+</kw>
+<status status="NOT RUN" starttime="20230411 11:33:24.745" endtime="20230411 11:33:24.746"/>
+</branch>
+<status status="PASS" starttime="20230411 11:33:24.745" endtime="20230411 11:33:24.746"/>
+</if>
+<status status="PASS" starttime="20230411 11:33:24.745" endtime="20230411 11:33:24.746"/>
+</iter>
+<iter>
+<var name="${i}">banana</var>
+<if>
+<branch type="IF" condition="'${i}' == 'tables'">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Yes, there is at least one match!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230411 11:33:24.747" endtime="20230411 11:33:24.747"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${a}</var>
+<arg>1</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="NOT RUN" starttime="20230411 11:33:24.748" endtime="20230411 11:33:24.748"/>
+</kw>
+<status status="NOT RUN" starttime="20230411 11:33:24.747" endtime="20230411 11:33:24.748"/>
+</branch>
+<status status="PASS" starttime="20230411 11:33:24.747" endtime="20230411 11:33:24.748"/>
+</if>
+<status status="PASS" starttime="20230411 11:33:24.746" endtime="20230411 11:33:24.748"/>
+</iter>
+<status status="PASS" starttime="20230411 11:33:24.737" endtime="20230411 11:33:24.748"/>
+</for>
+<if>
+<branch type="IF" condition="${a} == 0">
+<kw name="Log To Console" library="BuiltIn">
+<arg>No match</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230411 11:33:24.750" endtime="20230411 11:33:24.751"/>
+</kw>
+<status status="PASS" starttime="20230411 11:33:24.749" endtime="20230411 11:33:24.751"/>
+</branch>
+<status status="PASS" starttime="20230411 11:33:24.749" endtime="20230411 11:33:24.752"/>
+</if>
+<status status="PASS" starttime="20230411 11:33:24.736" endtime="20230411 11:33:24.756"/>
 </test>
-<doc>Insert the sales data for the week and export it as a PDF.</doc>
-<status status="PASS" starttime="20230411 10:25:27.711" endtime="20230411 10:26:30.134"/>
+<doc>Exercise 1</doc>
+<status status="PASS" starttime="20230411 11:33:24.297" endtime="20230411 11:33:24.882"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tasks</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Intranet">Intranet</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Ex1">Ex1</stat>
 </suite>
 </statistics>
 <errors>
