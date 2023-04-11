@@ -53,5 +53,5 @@ Print out value of month in 'recTime' line
 Convert arr to str
     [Documentation]    Convert array to string
     [Arguments]    ${arr}
-    ${str}    Evaluate    "".join(${arr})
+    ${str}    Evaluate    " ".join(${arr})
     RETURN    ${str}

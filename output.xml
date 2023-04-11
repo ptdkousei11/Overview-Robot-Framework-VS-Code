@@ -1,51 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230411 17:03:23.249" rpa="false" schemaversion="3">
-<suite id="s1" name="Ex5" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\ex5.robot">
-<test id="s1-t1" name="Print out value of month in 'recTime' line" line="42">
+<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230411 17:21:43.214" rpa="false" schemaversion="3">
+<suite id="s1" name="Ex7" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\ex7.robot">
+<test id="s1-t1" name="Add value of VOIPMGCTRUNKGROUP into a array and print out that array." line="29">
 <kw name="Convert arr to str">
 <var>${str}</var>
-<arg>${arr}</arg>
+<arg>${number}</arg>
 <doc>Convert array to string</doc>
 <kw name="Evaluate" library="BuiltIn">
 <var>${str}</var>
-<arg>"".join(${arr})</arg>
+<arg>" ".join(${arr})</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20230411 17:03:23.595" level="INFO">${str} = &lt;IPDR xsi:type="test"&gt;&lt;VoIP:uniqueCallId&gt;005c-0100-2034-ffffffff@h10-250-191-194&lt;/VoIP:uniqueCallId&gt;&lt;VoIP:callProgressState&gt;5&lt;/VoIP:callProgressState&gt;&lt;nortel:recordID&gt;f37f9294a6157fb0073e58013bcaa5291...</msg>
-<status status="PASS" starttime="20230411 17:03:23.595" endtime="20230411 17:03:23.605"/>
+<msg timestamp="20230411 17:21:43.288" level="INFO">${str} = Total 5136 1-113-VOIPMGCTRUNKGROUP 1-1500-VOIPMGCTRUNKGROUP 1-5067-VOIPMGCTRUNKGROUP 1-VOIPMGSUBTRUNKGROUP 2-12-VOIPMGCTRUNKGROUP</msg>
+<status status="PASS" starttime="20230411 17:21:43.287" endtime="20230411 17:21:43.298"/>
 </kw>
 <return>
 <value>${str}</value>
-<status status="PASS" starttime="20230411 17:03:23.605" endtime="20230411 17:03:23.605"/>
+<status status="PASS" starttime="20230411 17:21:43.298" endtime="20230411 17:21:43.298"/>
 </return>
-<msg timestamp="20230411 17:03:23.606" level="INFO">${str} = &lt;IPDR xsi:type="test"&gt;&lt;VoIP:uniqueCallId&gt;005c-0100-2034-ffffffff@h10-250-191-194&lt;/VoIP:uniqueCallId&gt;&lt;VoIP:callProgressState&gt;5&lt;/VoIP:callProgressState&gt;&lt;nortel:recordID&gt;f37f9294a6157fb0073e58013bcaa5291...</msg>
-<status status="PASS" starttime="20230411 17:03:23.594" endtime="20230411 17:03:23.606"/>
+<msg timestamp="20230411 17:21:43.298" level="INFO">${str} = Total 5136 1-113-VOIPMGCTRUNKGROUP 1-1500-VOIPMGCTRUNKGROUP 1-5067-VOIPMGCTRUNKGROUP 1-VOIPMGSUBTRUNKGROUP 2-12-VOIPMGCTRUNKGROUP</msg>
+<status status="PASS" starttime="20230411 17:21:43.286" endtime="20230411 17:21:43.299"/>
 </kw>
 <kw name="Get Regexp Matches" library="String">
-<var>${recTime}</var>
+<var>${value}</var>
 <arg>${str}</arg>
-<arg>(?&lt;=&lt;nortel:recTime&gt;\\d\\d\\d\\d-)\\d\\d(?=-\\d\\d\\w\\d\\d:\\d\\d:\\d\\d.\\d\\d\\d\\w&lt;/nortel:recTime&gt;)</arg>
+<arg>(?&lt;=\\d-)\\d*(?=-\\D+)</arg>
 <doc>Returns a list of all non-overlapping matches in the given string.</doc>
-<msg timestamp="20230411 17:03:23.607" level="INFO">${recTime} = ['04']</msg>
-<status status="PASS" starttime="20230411 17:03:23.606" endtime="20230411 17:03:23.607"/>
+<msg timestamp="20230411 17:21:43.310" level="INFO">${value} = ['113', '1500', '5067', '12']</msg>
+<status status="PASS" starttime="20230411 17:21:43.309" endtime="20230411 17:21:43.310"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{value_arr}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230411 17:21:43.341" level="INFO">@{value_arr} = [ ]</msg>
+<status status="PASS" starttime="20230411 17:21:43.341" endtime="20230411 17:21:43.341"/>
 </kw>
 <for flavor="IN">
 <var>${i}</var>
-<value>@{recTime}</value>
+<value>@{value}</value>
 <iter>
-<var name="${i}">04</var>
+<var name="${i}">113</var>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${i}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230411 17:03:23.611" endtime="20230411 17:03:23.614"/>
+<status status="PASS" starttime="20230411 17:21:43.350" endtime="20230411 17:21:43.358"/>
 </kw>
-<status status="PASS" starttime="20230411 17:03:23.611" endtime="20230411 17:03:23.614"/>
+<kw name="Append To List" library="Collections">
+<arg>${value_arr}</arg>
+<arg>${i}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230411 17:21:43.358" endtime="20230411 17:21:43.359"/>
+</kw>
+<status status="PASS" starttime="20230411 17:21:43.350" endtime="20230411 17:21:43.359"/>
 </iter>
-<status status="PASS" starttime="20230411 17:03:23.610" endtime="20230411 17:03:23.615"/>
+<iter>
+<var name="${i}">1500</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230411 17:21:43.360" endtime="20230411 17:21:43.370"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${value_arr}</arg>
+<arg>${i}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230411 17:21:43.370" endtime="20230411 17:21:43.371"/>
+</kw>
+<status status="PASS" starttime="20230411 17:21:43.359" endtime="20230411 17:21:43.371"/>
+</iter>
+<iter>
+<var name="${i}">5067</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230411 17:21:43.371" endtime="20230411 17:21:43.385"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${value_arr}</arg>
+<arg>${i}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230411 17:21:43.386" endtime="20230411 17:21:43.386"/>
+</kw>
+<status status="PASS" starttime="20230411 17:21:43.371" endtime="20230411 17:21:43.386"/>
+</iter>
+<iter>
+<var name="${i}">12</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230411 17:21:43.387" endtime="20230411 17:21:43.397"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${value_arr}</arg>
+<arg>${i}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230411 17:21:43.397" endtime="20230411 17:21:43.398"/>
+</kw>
+<status status="PASS" starttime="20230411 17:21:43.386" endtime="20230411 17:21:43.398"/>
+</iter>
+<status status="PASS" starttime="20230411 17:21:43.350" endtime="20230411 17:21:43.398"/>
 </for>
-<status status="PASS" starttime="20230411 17:03:23.593" endtime="20230411 17:03:23.621"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${value_arr}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230411 17:21:43.403" endtime="20230411 17:21:43.406"/>
+</kw>
+<status status="PASS" starttime="20230411 17:21:43.280" endtime="20230411 17:21:43.408"/>
 </test>
-<doc>Exercise 5</doc>
-<status status="PASS" starttime="20230411 17:03:23.257" endtime="20230411 17:03:23.707"/>
+<doc>Exercise 7</doc>
+<status status="PASS" starttime="20230411 17:21:43.221" endtime="20230411 17:21:43.415"/>
 </suite>
 <statistics>
 <total>
@@ -54,7 +116,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Ex5">Ex5</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Ex7">Ex7</stat>
 </suite>
 </statistics>
 <errors>
