@@ -8,9 +8,9 @@ Library             Collections
 @{arr}
 ...             SGW_SIP_ID
 ...             CP_CALLM_ID
-...             ID_CHANNEL_ID_SIP_DAL 20100
-...             ID_CALLED_PARTY_NUM_1300000000
-...             ID_CALLING_PARTY_CAT_CGPCAT_PAY_PHONE
+...             ID_CHANNEL_ID${SPACE}SIP_DAL 20100
+...             ID_CALLED_PARTY${SPACE}NUM_1300000000
+...             ID_CALLING_PARTY_CAT${SPACE}CGPCAT_PAY_PHONE
 &{Cat}          one=${arr}
 &{pattern}      Cat=&{Cat}
 &{msgIn}        pattern=&{pattern}    tcid=TC_01    start_boundary=ECCP_CC_SETUP
