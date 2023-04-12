@@ -1,40 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230412 15:48:13.047" rpa="true" schemaversion="3">
-<suite id="s1" name="Intranet" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\source\intranet.robot">
-<test id="s1-t1" name="Insert the sales data for the week and export it as a PDF" line="6">
-<kw name="Open the intranet website">
-<kw name="Open Available Browser" library="RPA.Browser.Selenium">
-<arg>https://robotsparebinindustries.com/</arg>
-<doc>Attempts to open a browser on the user's device from a set of
-supported browsers. Automatically downloads a corresponding webdriver
-if none is already installed.</doc>
-<msg timestamp="20230412 15:48:15.020" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<msg timestamp="20230412 15:48:15.157" level="INFO">====== WebDriver manager ======</msg>
-<msg timestamp="20230412 15:48:32.073" level="INFO">Creating an instance of the Firefox WebDriver.</msg>
-<msg timestamp="20230412 15:48:32.092" level="INFO">====== WebDriver manager ======</msg>
-<msg timestamp="20230412 15:48:43.069" level="INFO">Creating an instance of the Firefox WebDriver.</msg>
-<msg timestamp="20230412 15:49:03.547" level="INFO">Created Firefox browser with arguments: </msg>
-<msg timestamp="20230412 15:49:03.547" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;HTTPSConnectionPool(host='chromedriver.storage.googleapis.com', port=443): Max retries exceeded with url: /112.0.5615/chromedriver_win32.zip (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1002)')))&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Firefox&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: 'geckodriver' executable needs to be in PATH. 
-&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Firefox&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg timestamp="20230412 15:49:03.547" level="INFO">Opening url 'https://robotsparebinindustries.com/'</msg>
-<status status="PASS" starttime="20230412 15:48:15.015" endtime="20230412 15:49:06.614"/>
+<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230412 15:57:03.044" rpa="false" schemaversion="3">
+<suite id="s1" name="Ex5" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\ex5.robot">
+<test id="s1-t1" name="Count number of lines that contain 'VoIP' or 'Nortel'" line="30">
+<kw name="Count Line Contain VoIP Or Nortel" library="ex5">
+<var>${line}</var>
+<arg>${arr}</arg>
+<msg timestamp="20230412 15:57:03.828" level="INFO">${line} = 2</msg>
+<status status="PASS" starttime="20230412 15:57:03.827" endtime="20230412 15:57:03.832"/>
 </kw>
-<status status="PASS" starttime="20230412 15:48:15.015" endtime="20230412 15:49:06.615"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${line}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230412 15:57:03.833" endtime="20230412 15:57:03.839"/>
 </kw>
-<status status="PASS" starttime="20230412 15:48:15.012" endtime="20230412 15:49:06.617"/>
+<status status="PASS" starttime="20230412 15:57:03.826" endtime="20230412 15:57:03.839"/>
 </test>
-<doc>Insert the sales data for the week and export it as a PDF.</doc>
-<status status="PASS" starttime="20230412 15:48:13.056" endtime="20230412 15:49:06.620"/>
+<doc>Exercise 5</doc>
+<status status="PASS" starttime="20230412 15:57:03.051" endtime="20230412 15:57:03.845"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tasks</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Intranet">Intranet</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Ex5">Ex5</stat>
 </suite>
 </statistics>
 <errors>
