@@ -47,9 +47,7 @@ Print out value of 'recordID'
 
 Print out value of month in 'recTime' line
     ${str}    Convert arr to str    ${arr}
-    ${recTime}    Get Regexp Matches
-    ...    ${str}
-    ...    (?<=<nortel:recTime>\\d\\d\\d\\d-)\\d\\d(?=-\\d\\d\\w\\d\\d:\\d\\d:\\d\\d.\\d\\d\\d\\w</nortel:recTime>)
+    ${recTime}    Get Regexp Matches    ${str}    (?<=\\d-)\\d\\d(?=-\\d)
     FOR    ${i}    IN    @{recTime}
         Log To Console    ${i}
     END

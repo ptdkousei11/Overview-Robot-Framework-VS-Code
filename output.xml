@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230412 15:11:15.038" rpa="false" schemaversion="3">
-<suite id="s1" name="Ex11" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\ex11.robot">
-<test id="s1-t1" name="Print dict" line="20">
-<kw name="Log To Console" library="BuiltIn">
-<arg>${msgIn}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230412 15:11:15.092" endtime="20230412 15:11:15.106"/>
+<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230412 15:30:42.882" rpa="false" schemaversion="3">
+<suite id="s1" name="Ex5" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\ex5.robot">
+<test id="s1-t1" name="Print out value of month in 'recTime' line" line="48">
+<kw name="Convert arr to str">
+<var>${str}</var>
+<arg>${arr}</arg>
+<doc>Convert array to string</doc>
+<kw name="Evaluate" library="BuiltIn">
+<var>${str}</var>
+<arg>" ".join(${arr})</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230412 15:30:43.645" level="INFO">${str} = &lt;IPDR xsi:type="test"&gt; &lt;VoIP:uniqueCallId&gt;005c-0100-2034-ffffffff@h10-250-191-194&lt;/VoIP:uniqueCallId&gt; &lt;VoIP:callProgressState&gt;5&lt;/VoIP:callProgressState&gt; &lt;nortel:recordID&gt;f37f9294a6157fb0073e58013bcaa5...</msg>
+<status status="PASS" starttime="20230412 15:30:43.645" endtime="20230412 15:30:43.649"/>
 </kw>
-<status status="PASS" starttime="20230412 15:11:15.089" endtime="20230412 15:11:15.108"/>
+<return>
+<value>${str}</value>
+<status status="PASS" starttime="20230412 15:30:43.649" endtime="20230412 15:30:43.649"/>
+</return>
+<msg timestamp="20230412 15:30:43.649" level="INFO">${str} = &lt;IPDR xsi:type="test"&gt; &lt;VoIP:uniqueCallId&gt;005c-0100-2034-ffffffff@h10-250-191-194&lt;/VoIP:uniqueCallId&gt; &lt;VoIP:callProgressState&gt;5&lt;/VoIP:callProgressState&gt; &lt;nortel:recordID&gt;f37f9294a6157fb0073e58013bcaa5...</msg>
+<status status="PASS" starttime="20230412 15:30:43.644" endtime="20230412 15:30:43.650"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${recTime}</var>
+<arg>${str}</arg>
+<arg>(?&lt;=\\d-)\\d\\d(?=-\\d)</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20230412 15:30:43.665" level="INFO">${recTime} = ['04']</msg>
+<status status="PASS" starttime="20230412 15:30:43.665" endtime="20230412 15:30:43.666"/>
+</kw>
+<for flavor="IN">
+<var>${i}</var>
+<value>@{recTime}</value>
+<iter>
+<var name="${i}">04</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230412 15:30:43.667" endtime="20230412 15:30:43.677"/>
+</kw>
+<status status="PASS" starttime="20230412 15:30:43.667" endtime="20230412 15:30:43.680"/>
+</iter>
+<status status="PASS" starttime="20230412 15:30:43.666" endtime="20230412 15:30:43.680"/>
+</for>
+<status status="PASS" starttime="20230412 15:30:43.643" endtime="20230412 15:30:43.688"/>
 </test>
-<doc>Exercise 11</doc>
-<status status="PASS" starttime="20230412 15:11:15.044" endtime="20230412 15:11:15.113"/>
+<doc>Exercise 5</doc>
+<status status="PASS" starttime="20230412 15:30:42.956" endtime="20230412 15:30:43.696"/>
 </suite>
 <statistics>
 <total>
@@ -19,7 +54,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Ex11">Ex11</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Ex5">Ex5</stat>
 </suite>
 </statistics>
 <errors>
