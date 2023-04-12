@@ -1,47 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230412 10:50:53.291" rpa="false" schemaversion="3">
-<suite id="s1" name="Ex8" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\ex8.robot">
-<test id="s1-t1" name="Print packages that contain recordID" line="32">
-<kw name="Convert arr to str">
-<var>${new_str}</var>
-<arg>${arr}</arg>
-<doc>Convert array to string</doc>
-<kw name="Evaluate" library="BuiltIn">
-<var>${str}</var>
-<arg>",".join(${arr})</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20230412 10:50:53.352" level="INFO">${str} = &lt;IPDR xsi:type="nortel:Nortel-SDP"&gt;,&lt;nortel:recordID&gt;2b08069da62b6406e3e58013a428379a60c322e9&lt;/nortel:recordID&gt;,&lt;nortel:sessionID&gt;0&lt;/nortel:sessionID&gt;,&lt;nortel:sessionName&gt;nortelnetworks&lt;/nortel:sessio...</msg>
-<status status="PASS" starttime="20230412 10:50:53.351" endtime="20230412 10:50:53.361"/>
-</kw>
-<return>
-<value>${str}</value>
-<status status="PASS" starttime="20230412 10:50:53.361" endtime="20230412 10:50:53.362"/>
-</return>
-<msg timestamp="20230412 10:50:53.362" level="INFO">${new_str} = &lt;IPDR xsi:type="nortel:Nortel-SDP"&gt;,&lt;nortel:recordID&gt;2b08069da62b6406e3e58013a428379a60c322e9&lt;/nortel:recordID&gt;,&lt;nortel:sessionID&gt;0&lt;/nortel:sessionID&gt;,&lt;nortel:sessionName&gt;nortelnetworks&lt;/nortel:sessio...</msg>
-<status status="PASS" starttime="20230412 10:50:53.350" endtime="20230412 10:50:53.362"/>
-</kw>
-<kw name="Split Arr" library="ex8">
-<var>@{new_arr}</var>
-<arg>${new_str}</arg>
-<msg timestamp="20230412 10:50:53.371" level="INFO">@{new_arr} = [ &lt;IPDR xsi:type="nortel:Nortel-SDP"&gt;&lt;nortel:recordID&gt;2b08069da62b6406e3e58013a428379a60c322e9&lt;/nortel:recordID&gt;&lt;nortel:sessionID&gt;0&lt;/nortel:sessionID&gt;&lt;nortel:sessionName&gt;nortelnetworks&lt;/nortel:session...</msg>
-<status status="PASS" starttime="20230412 10:50:53.371" endtime="20230412 10:50:53.371"/>
-</kw>
-<kw name="Get Packages" library="ex8">
-<var>${packages}</var>
-<arg>${new_arr}</arg>
-<arg>${recordID}</arg>
-<msg timestamp="20230412 10:50:53.434" level="INFO">${packages} =  &lt;IPDR xsi:type="nortel:Nortel-SDP"&gt;&lt;nortel:recordID&gt;2b08069da62b6406e3e58013a428379a60c322e9&lt;/nortel:recordID&gt;&lt;nortel:sessionID&gt;0&lt;/nortel:sessionID&gt;&lt;nortel:sessionName&gt;nortelnetworks&lt;/nortel:sessionN...</msg>
-<status status="PASS" starttime="20230412 10:50:53.434" endtime="20230412 10:50:53.434"/>
+<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230412 14:27:47.958" rpa="false" schemaversion="3">
+<suite id="s1" name="Ex11" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\ex11.robot">
+<test id="s1-t1" name="Delete key &quot;-tcid&quot; and then print out the hash." line="27">
+<kw name="Remove From Dictionary" library="Collections">
+<arg>${msgIn}</arg>
+<arg>tcid</arg>
+<doc>Removes the given ``keys`` from the ``dictionary``.</doc>
+<msg timestamp="20230412 14:27:48.012" level="INFO">Removed item with key 'tcid' and value 'TC_01'.</msg>
+<status status="PASS" starttime="20230412 14:27:48.012" endtime="20230412 14:27:48.015"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${packages}</arg>
+<arg>${msgIn}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230412 10:50:53.438" endtime="20230412 10:50:53.455"/>
+<status status="PASS" starttime="20230412 14:27:48.020" endtime="20230412 14:27:48.022"/>
 </kw>
-<status status="PASS" starttime="20230412 10:50:53.349" endtime="20230412 10:50:53.468"/>
+<status status="PASS" starttime="20230412 14:27:48.009" endtime="20230412 14:27:48.024"/>
 </test>
-<doc>Exercise 8</doc>
-<status status="PASS" starttime="20230412 10:50:53.299" endtime="20230412 10:50:53.472"/>
+<doc>Exercise 11</doc>
+<status status="PASS" starttime="20230412 14:27:47.967" endtime="20230412 14:27:48.035"/>
 </suite>
 <statistics>
 <total>
@@ -50,9 +26,10 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Ex8">Ex8</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Ex11">Ex11</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20230412 14:27:48.003" level="WARN">Imported library 'd:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\resource.py' contains no keywords.</msg>
 </errors>
 </robot>
