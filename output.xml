@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230412 14:27:47.958" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230412 14:46:26.548" rpa="false" schemaversion="3">
 <suite id="s1" name="Ex11" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\ex11.robot">
-<test id="s1-t1" name="Delete key &quot;-tcid&quot; and then print out the hash." line="27">
+<test id="s1-t1" name="Delete key &quot;-tcid&quot; and then print out the hash." line="26">
 <kw name="Remove From Dictionary" library="Collections">
 <arg>${msgIn}</arg>
 <arg>tcid</arg>
 <doc>Removes the given ``keys`` from the ``dictionary``.</doc>
-<msg timestamp="20230412 14:27:48.012" level="INFO">Removed item with key 'tcid' and value 'TC_01'.</msg>
-<status status="PASS" starttime="20230412 14:27:48.012" endtime="20230412 14:27:48.015"/>
+<msg timestamp="20230412 14:46:26.600" level="INFO">Removed item with key 'tcid' and value 'TC_01'.</msg>
+<status status="PASS" starttime="20230412 14:46:26.599" endtime="20230412 14:46:26.609"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${msgIn}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230412 14:27:48.020" endtime="20230412 14:27:48.022"/>
+<status status="PASS" starttime="20230412 14:46:26.609" endtime="20230412 14:46:26.679"/>
 </kw>
-<status status="PASS" starttime="20230412 14:27:48.009" endtime="20230412 14:27:48.024"/>
+<status status="PASS" starttime="20230412 14:46:26.594" endtime="20230412 14:46:26.688"/>
 </test>
 <doc>Exercise 11</doc>
-<status status="PASS" starttime="20230412 14:27:47.967" endtime="20230412 14:27:48.035"/>
+<status status="PASS" starttime="20230412 14:46:26.555" endtime="20230412 14:46:26.691"/>
 </suite>
 <statistics>
 <total>
@@ -30,6 +30,5 @@
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230412 14:27:48.003" level="WARN">Imported library 'd:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\resource.py' contains no keywords.</msg>
 </errors>
 </robot>

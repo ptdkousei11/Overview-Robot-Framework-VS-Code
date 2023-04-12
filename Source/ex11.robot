@@ -2,7 +2,6 @@
 Documentation       Exercise 11
 
 Library             Collections
-Library             resource.py
 
 
 *** Variables ***

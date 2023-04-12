@@ -17,4 +17,4 @@ Print info of em1, em2
     #Log To Console    ${employee}
 
 Print year of em2
-    Log To Console    ${em2.Year}
+    Log To Console    ${employee.em2.Year}

@@ -2,6 +2,7 @@
 Documentation       Exercise 1
 
 Library             RPA.Netsuite
+Library             ex1.py
 
 
 *** Variables ***
@@ -25,11 +26,5 @@ Print all element of array
     Log To Console    ${list}
 
 Verify if any element in array contains 'tables'
-    FOR    ${i}    IN    @{list}
-        IF    '${i}' == 'tables'
-            Log To Console    Yes, there is at least one match!
-            ${a}    Convert To Integer    1
-        END
-    END
-
-    IF    ${a} == 0    Log To Console    No match
+    ${verify}    Verify Element    ${list}    tables
+    Log To Console    ${verify}
