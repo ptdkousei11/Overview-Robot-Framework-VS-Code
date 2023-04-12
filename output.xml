@@ -1,22 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230412 15:57:03.044" rpa="false" schemaversion="3">
-<suite id="s1" name="Ex5" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\ex5.robot">
-<test id="s1-t1" name="Count number of lines that contain 'VoIP' or 'Nortel'" line="30">
-<kw name="Count Line Contain VoIP Or Nortel" library="ex5">
-<var>${line}</var>
-<arg>${arr}</arg>
-<msg timestamp="20230412 15:57:03.828" level="INFO">${line} = 2</msg>
-<status status="PASS" starttime="20230412 15:57:03.827" endtime="20230412 15:57:03.832"/>
-</kw>
+<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230412 16:48:13.752" rpa="false" schemaversion="3">
+<suite id="s1" name="Ex11" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\ex11.robot">
+<test id="s1-t1" name="Print out &quot;ID_CALLING_PARTY_CAT_CGPCAT_PAY_PHONE&quot; in this hash" line="23">
 <kw name="Log To Console" library="BuiltIn">
-<arg>${line}</arg>
+<arg>${msgIn.pattern.Cat['1'][4]}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230412 15:57:03.833" endtime="20230412 15:57:03.839"/>
+<status status="PASS" starttime="20230412 16:48:13.802" endtime="20230412 16:48:13.806"/>
 </kw>
-<status status="PASS" starttime="20230412 15:57:03.826" endtime="20230412 15:57:03.839"/>
+<status status="PASS" starttime="20230412 16:48:13.801" endtime="20230412 16:48:13.807"/>
 </test>
-<doc>Exercise 5</doc>
-<status status="PASS" starttime="20230412 15:57:03.051" endtime="20230412 15:57:03.845"/>
+<doc>Exercise 11</doc>
+<status status="PASS" starttime="20230412 16:48:13.759" endtime="20230412 16:48:13.816"/>
 </suite>
 <statistics>
 <total>
@@ -25,7 +19,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Ex5">Ex5</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Ex11">Ex11</stat>
 </suite>
 </statistics>
 <errors>

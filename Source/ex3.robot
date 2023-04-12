@@ -3,6 +3,7 @@ Documentation       Exercise 3
 
 Library             RPA.Netsuite
 Library             String
+Resource            key.resource
 
 
 *** Variables ***
