@@ -1,101 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230412 15:46:19.185" rpa="false" schemaversion="3">
-<suite id="s1" name="Ex4" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\ex4.robot">
-<test id="s1-t1" name="Print with keywords" line="27">
-<kw name="Log To Console" library="BuiltIn">
-<arg>Print 1 digit number</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230412 15:46:19.278" endtime="20230412 15:46:19.281"/>
+<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230412 15:48:13.047" rpa="true" schemaversion="3">
+<suite id="s1" name="Intranet" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\source\intranet.robot">
+<test id="s1-t1" name="Insert the sales data for the week and export it as a PDF" line="6">
+<kw name="Open the intranet website">
+<kw name="Open Available Browser" library="RPA.Browser.Selenium">
+<arg>https://robotsparebinindustries.com/</arg>
+<doc>Attempts to open a browser on the user's device from a set of
+supported browsers. Automatically downloads a corresponding webdriver
+if none is already installed.</doc>
+<msg timestamp="20230412 15:48:15.020" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20230412 15:48:15.157" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20230412 15:48:32.073" level="INFO">Creating an instance of the Firefox WebDriver.</msg>
+<msg timestamp="20230412 15:48:32.092" level="INFO">====== WebDriver manager ======</msg>
+<msg timestamp="20230412 15:48:43.069" level="INFO">Creating an instance of the Firefox WebDriver.</msg>
+<msg timestamp="20230412 15:49:03.547" level="INFO">Created Firefox browser with arguments: </msg>
+<msg timestamp="20230412 15:49:03.547" level="INFO" html="true">&lt;p&gt;Attempted combinations:&lt;/p&gt;&lt;div class="doc"&gt;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Browser&lt;/th&gt;&lt;th&gt;Download&lt;/th&gt;&lt;th&gt;Error&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: 'chromedriver' executable needs to be in PATH. Please see https://chromedriver.chromium.org/home
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Chrome&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;HTTPSConnectionPool(host='chromedriver.storage.googleapis.com', port=443): Max retries exceeded with url: /112.0.5615/chromedriver_win32.zip (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1002)')))&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Firefox&lt;/td&gt;&lt;td&gt;False&lt;/td&gt;&lt;td&gt;Message: 'geckodriver' executable needs to be in PATH. 
+&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Firefox&lt;/td&gt;&lt;td&gt;True&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg timestamp="20230412 15:49:03.547" level="INFO">Opening url 'https://robotsparebinindustries.com/'</msg>
+<status status="PASS" starttime="20230412 15:48:15.015" endtime="20230412 15:49:06.614"/>
 </kw>
-<kw name="Print 1 digit number">
-<arg>${number}</arg>
-<doc>Return 1 digit number</doc>
-<kw name="Get Regexp Matches" library="String">
-<var>${digit}</var>
-<arg>${string}</arg>
-<arg>\\b\\d\\b</arg>
-<doc>Returns a list of all non-overlapping matches in the given string.</doc>
-<msg timestamp="20230412 15:46:19.282" level="INFO">${digit} = ['0', '1']</msg>
-<status status="PASS" starttime="20230412 15:46:19.282" endtime="20230412 15:46:19.286"/>
+<status status="PASS" starttime="20230412 15:48:15.015" endtime="20230412 15:49:06.615"/>
 </kw>
-<for flavor="IN">
-<var>${i}</var>
-<value>@{digit}</value>
-<iter>
-<var name="${i}">0</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${i}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230412 15:46:19.287" endtime="20230412 15:46:19.289"/>
-</kw>
-<status status="PASS" starttime="20230412 15:46:19.287" endtime="20230412 15:46:19.290"/>
-</iter>
-<iter>
-<var name="${i}">1</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${i}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230412 15:46:19.310" endtime="20230412 15:46:19.323"/>
-</kw>
-<status status="PASS" starttime="20230412 15:46:19.309" endtime="20230412 15:46:19.324"/>
-</iter>
-<status status="PASS" starttime="20230412 15:46:19.286" endtime="20230412 15:46:19.324"/>
-</for>
-<return>
-<value>0</value>
-<status status="PASS" starttime="20230412 15:46:19.324" endtime="20230412 15:46:19.324"/>
-</return>
-<status status="PASS" starttime="20230412 15:46:19.281" endtime="20230412 15:46:19.324"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Print 2 digit number</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230412 15:46:19.327" endtime="20230412 15:46:19.330"/>
-</kw>
-<kw name="Print 2 digit number">
-<arg>${number}</arg>
-<doc>Return 2 digit number</doc>
-<kw name="Get Regexp Matches" library="String">
-<var>${digit}</var>
-<arg>${string}</arg>
-<arg>\\b\\d\\d\\b</arg>
-<doc>Returns a list of all non-overlapping matches in the given string.</doc>
-<msg timestamp="20230412 15:46:19.337" level="INFO">${digit} = ['22']</msg>
-<status status="PASS" starttime="20230412 15:46:19.336" endtime="20230412 15:46:19.337"/>
-</kw>
-<for flavor="IN">
-<var>${i}</var>
-<value>@{digit}</value>
-<iter>
-<var name="${i}">22</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${i}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230412 15:46:19.341" endtime="20230412 15:46:19.343"/>
-</kw>
-<status status="PASS" starttime="20230412 15:46:19.341" endtime="20230412 15:46:19.343"/>
-</iter>
-<status status="PASS" starttime="20230412 15:46:19.337" endtime="20230412 15:46:19.343"/>
-</for>
-<return>
-<value>0</value>
-<status status="PASS" starttime="20230412 15:46:19.343" endtime="20230412 15:46:19.343"/>
-</return>
-<status status="PASS" starttime="20230412 15:46:19.335" endtime="20230412 15:46:19.344"/>
-</kw>
-<status status="PASS" starttime="20230412 15:46:19.275" endtime="20230412 15:46:19.357"/>
+<status status="PASS" starttime="20230412 15:48:15.012" endtime="20230412 15:49:06.617"/>
 </test>
-<doc>Exercise 4</doc>
-<status status="PASS" starttime="20230412 15:46:19.193" endtime="20230412 15:46:19.360"/>
+<doc>Insert the sales data for the week and export it as a PDF.</doc>
+<status status="PASS" starttime="20230412 15:48:13.056" endtime="20230412 15:49:06.620"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tasks</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Ex4">Ex4</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Intranet">Intranet</stat>
 </suite>
 </statistics>
 <errors>
