@@ -1,51 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230412 15:30:42.882" rpa="false" schemaversion="3">
-<suite id="s1" name="Ex5" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\ex5.robot">
-<test id="s1-t1" name="Print out value of month in 'recTime' line" line="48">
-<kw name="Convert arr to str">
-<var>${str}</var>
-<arg>${arr}</arg>
-<doc>Convert array to string</doc>
-<kw name="Evaluate" library="BuiltIn">
-<var>${str}</var>
-<arg>" ".join(${arr})</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20230412 15:30:43.645" level="INFO">${str} = &lt;IPDR xsi:type="test"&gt; &lt;VoIP:uniqueCallId&gt;005c-0100-2034-ffffffff@h10-250-191-194&lt;/VoIP:uniqueCallId&gt; &lt;VoIP:callProgressState&gt;5&lt;/VoIP:callProgressState&gt; &lt;nortel:recordID&gt;f37f9294a6157fb0073e58013bcaa5...</msg>
-<status status="PASS" starttime="20230412 15:30:43.645" endtime="20230412 15:30:43.649"/>
+<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230412 15:46:19.185" rpa="false" schemaversion="3">
+<suite id="s1" name="Ex4" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\ex4.robot">
+<test id="s1-t1" name="Print with keywords" line="27">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Print 1 digit number</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230412 15:46:19.278" endtime="20230412 15:46:19.281"/>
 </kw>
-<return>
-<value>${str}</value>
-<status status="PASS" starttime="20230412 15:30:43.649" endtime="20230412 15:30:43.649"/>
-</return>
-<msg timestamp="20230412 15:30:43.649" level="INFO">${str} = &lt;IPDR xsi:type="test"&gt; &lt;VoIP:uniqueCallId&gt;005c-0100-2034-ffffffff@h10-250-191-194&lt;/VoIP:uniqueCallId&gt; &lt;VoIP:callProgressState&gt;5&lt;/VoIP:callProgressState&gt; &lt;nortel:recordID&gt;f37f9294a6157fb0073e58013bcaa5...</msg>
-<status status="PASS" starttime="20230412 15:30:43.644" endtime="20230412 15:30:43.650"/>
-</kw>
+<kw name="Print 1 digit number">
+<arg>${number}</arg>
+<doc>Return 1 digit number</doc>
 <kw name="Get Regexp Matches" library="String">
-<var>${recTime}</var>
-<arg>${str}</arg>
-<arg>(?&lt;=\\d-)\\d\\d(?=-\\d)</arg>
+<var>${digit}</var>
+<arg>${string}</arg>
+<arg>\\b\\d\\b</arg>
 <doc>Returns a list of all non-overlapping matches in the given string.</doc>
-<msg timestamp="20230412 15:30:43.665" level="INFO">${recTime} = ['04']</msg>
-<status status="PASS" starttime="20230412 15:30:43.665" endtime="20230412 15:30:43.666"/>
+<msg timestamp="20230412 15:46:19.282" level="INFO">${digit} = ['0', '1']</msg>
+<status status="PASS" starttime="20230412 15:46:19.282" endtime="20230412 15:46:19.286"/>
 </kw>
 <for flavor="IN">
 <var>${i}</var>
-<value>@{recTime}</value>
+<value>@{digit}</value>
 <iter>
-<var name="${i}">04</var>
+<var name="${i}">0</var>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${i}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230412 15:30:43.667" endtime="20230412 15:30:43.677"/>
+<status status="PASS" starttime="20230412 15:46:19.287" endtime="20230412 15:46:19.289"/>
 </kw>
-<status status="PASS" starttime="20230412 15:30:43.667" endtime="20230412 15:30:43.680"/>
+<status status="PASS" starttime="20230412 15:46:19.287" endtime="20230412 15:46:19.290"/>
 </iter>
-<status status="PASS" starttime="20230412 15:30:43.666" endtime="20230412 15:30:43.680"/>
+<iter>
+<var name="${i}">1</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230412 15:46:19.310" endtime="20230412 15:46:19.323"/>
+</kw>
+<status status="PASS" starttime="20230412 15:46:19.309" endtime="20230412 15:46:19.324"/>
+</iter>
+<status status="PASS" starttime="20230412 15:46:19.286" endtime="20230412 15:46:19.324"/>
 </for>
-<status status="PASS" starttime="20230412 15:30:43.643" endtime="20230412 15:30:43.688"/>
+<return>
+<value>0</value>
+<status status="PASS" starttime="20230412 15:46:19.324" endtime="20230412 15:46:19.324"/>
+</return>
+<status status="PASS" starttime="20230412 15:46:19.281" endtime="20230412 15:46:19.324"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Print 2 digit number</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230412 15:46:19.327" endtime="20230412 15:46:19.330"/>
+</kw>
+<kw name="Print 2 digit number">
+<arg>${number}</arg>
+<doc>Return 2 digit number</doc>
+<kw name="Get Regexp Matches" library="String">
+<var>${digit}</var>
+<arg>${string}</arg>
+<arg>\\b\\d\\d\\b</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20230412 15:46:19.337" level="INFO">${digit} = ['22']</msg>
+<status status="PASS" starttime="20230412 15:46:19.336" endtime="20230412 15:46:19.337"/>
+</kw>
+<for flavor="IN">
+<var>${i}</var>
+<value>@{digit}</value>
+<iter>
+<var name="${i}">22</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${i}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230412 15:46:19.341" endtime="20230412 15:46:19.343"/>
+</kw>
+<status status="PASS" starttime="20230412 15:46:19.341" endtime="20230412 15:46:19.343"/>
+</iter>
+<status status="PASS" starttime="20230412 15:46:19.337" endtime="20230412 15:46:19.343"/>
+</for>
+<return>
+<value>0</value>
+<status status="PASS" starttime="20230412 15:46:19.343" endtime="20230412 15:46:19.343"/>
+</return>
+<status status="PASS" starttime="20230412 15:46:19.335" endtime="20230412 15:46:19.344"/>
+</kw>
+<status status="PASS" starttime="20230412 15:46:19.275" endtime="20230412 15:46:19.357"/>
 </test>
-<doc>Exercise 5</doc>
-<status status="PASS" starttime="20230412 15:30:42.956" endtime="20230412 15:30:43.696"/>
+<doc>Exercise 4</doc>
+<status status="PASS" starttime="20230412 15:46:19.193" endtime="20230412 15:46:19.360"/>
 </suite>
 <statistics>
 <total>
@@ -54,7 +95,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Ex5">Ex5</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Ex4">Ex4</stat>
 </suite>
 </statistics>
 <errors>

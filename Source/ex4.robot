@@ -42,7 +42,7 @@ Print 1 digit number
     RETURN    0
 
 Print 2 digit number
-    [Documentation]    Return 1 digit number
+    [Documentation]    Return 2 digit number
     [Arguments]    ${string}
     ${digit}    Get Regexp Matches    ${string}    \\b\\d\\d+\\b
     FOR    ${i}    IN    @{digit}
