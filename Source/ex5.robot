@@ -4,6 +4,8 @@ Documentation       Exercise 5
 Library             String
 Library             RPA.Calendar
 Library             Collections
+Library             RPA.Netsuite
+Library             ex5.py
 
 
 *** Variables ***
@@ -24,6 +26,10 @@ Print arr
 Convert arr to str with keywords
     ${str}    Convert arr to str    ${arr}
     Log To Console    ${str}
+
+Count number of lines that contain 'VoIP' or 'Nortel'
+    ${line}    Count Line Contain VoIP Or Nortel    ${arr}
+    Log To Console    ${line}
 
 Print out value of 'uniqueCallId'
     ${str}    Convert arr to str    ${arr}

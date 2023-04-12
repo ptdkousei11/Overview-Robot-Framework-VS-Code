@@ -1,113 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230411 17:21:43.214" rpa="false" schemaversion="3">
-<suite id="s1" name="Ex7" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\ex7.robot">
-<test id="s1-t1" name="Add value of VOIPMGCTRUNKGROUP into a array and print out that array." line="29">
+<robot generator="Robot 5.0.1 (Python 3.11.3 on win32)" generated="20230412 10:50:53.291" rpa="false" schemaversion="3">
+<suite id="s1" name="Ex8" source="d:\ptdat-batch40\Overview-Robot-Framework-VS-Code\Source\ex8.robot">
+<test id="s1-t1" name="Print packages that contain recordID" line="32">
 <kw name="Convert arr to str">
-<var>${str}</var>
-<arg>${number}</arg>
+<var>${new_str}</var>
+<arg>${arr}</arg>
 <doc>Convert array to string</doc>
 <kw name="Evaluate" library="BuiltIn">
 <var>${str}</var>
-<arg>" ".join(${arr})</arg>
+<arg>",".join(${arr})</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20230411 17:21:43.288" level="INFO">${str} = Total 5136 1-113-VOIPMGCTRUNKGROUP 1-1500-VOIPMGCTRUNKGROUP 1-5067-VOIPMGCTRUNKGROUP 1-VOIPMGSUBTRUNKGROUP 2-12-VOIPMGCTRUNKGROUP</msg>
-<status status="PASS" starttime="20230411 17:21:43.287" endtime="20230411 17:21:43.298"/>
+<msg timestamp="20230412 10:50:53.352" level="INFO">${str} = &lt;IPDR xsi:type="nortel:Nortel-SDP"&gt;,&lt;nortel:recordID&gt;2b08069da62b6406e3e58013a428379a60c322e9&lt;/nortel:recordID&gt;,&lt;nortel:sessionID&gt;0&lt;/nortel:sessionID&gt;,&lt;nortel:sessionName&gt;nortelnetworks&lt;/nortel:sessio...</msg>
+<status status="PASS" starttime="20230412 10:50:53.351" endtime="20230412 10:50:53.361"/>
 </kw>
 <return>
 <value>${str}</value>
-<status status="PASS" starttime="20230411 17:21:43.298" endtime="20230411 17:21:43.298"/>
+<status status="PASS" starttime="20230412 10:50:53.361" endtime="20230412 10:50:53.362"/>
 </return>
-<msg timestamp="20230411 17:21:43.298" level="INFO">${str} = Total 5136 1-113-VOIPMGCTRUNKGROUP 1-1500-VOIPMGCTRUNKGROUP 1-5067-VOIPMGCTRUNKGROUP 1-VOIPMGSUBTRUNKGROUP 2-12-VOIPMGCTRUNKGROUP</msg>
-<status status="PASS" starttime="20230411 17:21:43.286" endtime="20230411 17:21:43.299"/>
+<msg timestamp="20230412 10:50:53.362" level="INFO">${new_str} = &lt;IPDR xsi:type="nortel:Nortel-SDP"&gt;,&lt;nortel:recordID&gt;2b08069da62b6406e3e58013a428379a60c322e9&lt;/nortel:recordID&gt;,&lt;nortel:sessionID&gt;0&lt;/nortel:sessionID&gt;,&lt;nortel:sessionName&gt;nortelnetworks&lt;/nortel:sessio...</msg>
+<status status="PASS" starttime="20230412 10:50:53.350" endtime="20230412 10:50:53.362"/>
 </kw>
-<kw name="Get Regexp Matches" library="String">
-<var>${value}</var>
-<arg>${str}</arg>
-<arg>(?&lt;=\\d-)\\d*(?=-\\D+)</arg>
-<doc>Returns a list of all non-overlapping matches in the given string.</doc>
-<msg timestamp="20230411 17:21:43.310" level="INFO">${value} = ['113', '1500', '5067', '12']</msg>
-<status status="PASS" starttime="20230411 17:21:43.309" endtime="20230411 17:21:43.310"/>
+<kw name="Split Arr" library="ex8">
+<var>@{new_arr}</var>
+<arg>${new_str}</arg>
+<msg timestamp="20230412 10:50:53.371" level="INFO">@{new_arr} = [ &lt;IPDR xsi:type="nortel:Nortel-SDP"&gt;&lt;nortel:recordID&gt;2b08069da62b6406e3e58013a428379a60c322e9&lt;/nortel:recordID&gt;&lt;nortel:sessionID&gt;0&lt;/nortel:sessionID&gt;&lt;nortel:sessionName&gt;nortelnetworks&lt;/nortel:session...</msg>
+<status status="PASS" starttime="20230412 10:50:53.371" endtime="20230412 10:50:53.371"/>
 </kw>
-<kw name="Create List" library="BuiltIn">
-<var>@{value_arr}</var>
-<doc>Returns a list containing given items.</doc>
-<msg timestamp="20230411 17:21:43.341" level="INFO">@{value_arr} = [ ]</msg>
-<status status="PASS" starttime="20230411 17:21:43.341" endtime="20230411 17:21:43.341"/>
+<kw name="Get Packages" library="ex8">
+<var>${packages}</var>
+<arg>${new_arr}</arg>
+<arg>${recordID}</arg>
+<msg timestamp="20230412 10:50:53.434" level="INFO">${packages} =  &lt;IPDR xsi:type="nortel:Nortel-SDP"&gt;&lt;nortel:recordID&gt;2b08069da62b6406e3e58013a428379a60c322e9&lt;/nortel:recordID&gt;&lt;nortel:sessionID&gt;0&lt;/nortel:sessionID&gt;&lt;nortel:sessionName&gt;nortelnetworks&lt;/nortel:sessionN...</msg>
+<status status="PASS" starttime="20230412 10:50:53.434" endtime="20230412 10:50:53.434"/>
 </kw>
-<for flavor="IN">
-<var>${i}</var>
-<value>@{value}</value>
-<iter>
-<var name="${i}">113</var>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${i}</arg>
+<arg>${packages}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230411 17:21:43.350" endtime="20230411 17:21:43.358"/>
+<status status="PASS" starttime="20230412 10:50:53.438" endtime="20230412 10:50:53.455"/>
 </kw>
-<kw name="Append To List" library="Collections">
-<arg>${value_arr}</arg>
-<arg>${i}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230411 17:21:43.358" endtime="20230411 17:21:43.359"/>
-</kw>
-<status status="PASS" starttime="20230411 17:21:43.350" endtime="20230411 17:21:43.359"/>
-</iter>
-<iter>
-<var name="${i}">1500</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${i}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230411 17:21:43.360" endtime="20230411 17:21:43.370"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${value_arr}</arg>
-<arg>${i}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230411 17:21:43.370" endtime="20230411 17:21:43.371"/>
-</kw>
-<status status="PASS" starttime="20230411 17:21:43.359" endtime="20230411 17:21:43.371"/>
-</iter>
-<iter>
-<var name="${i}">5067</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${i}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230411 17:21:43.371" endtime="20230411 17:21:43.385"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${value_arr}</arg>
-<arg>${i}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230411 17:21:43.386" endtime="20230411 17:21:43.386"/>
-</kw>
-<status status="PASS" starttime="20230411 17:21:43.371" endtime="20230411 17:21:43.386"/>
-</iter>
-<iter>
-<var name="${i}">12</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${i}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230411 17:21:43.387" endtime="20230411 17:21:43.397"/>
-</kw>
-<kw name="Append To List" library="Collections">
-<arg>${value_arr}</arg>
-<arg>${i}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20230411 17:21:43.397" endtime="20230411 17:21:43.398"/>
-</kw>
-<status status="PASS" starttime="20230411 17:21:43.386" endtime="20230411 17:21:43.398"/>
-</iter>
-<status status="PASS" starttime="20230411 17:21:43.350" endtime="20230411 17:21:43.398"/>
-</for>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${value_arr}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230411 17:21:43.403" endtime="20230411 17:21:43.406"/>
-</kw>
-<status status="PASS" starttime="20230411 17:21:43.280" endtime="20230411 17:21:43.408"/>
+<status status="PASS" starttime="20230412 10:50:53.349" endtime="20230412 10:50:53.468"/>
 </test>
-<doc>Exercise 7</doc>
-<status status="PASS" starttime="20230411 17:21:43.221" endtime="20230411 17:21:43.415"/>
+<doc>Exercise 8</doc>
+<status status="PASS" starttime="20230412 10:50:53.299" endtime="20230412 10:50:53.472"/>
 </suite>
 <statistics>
 <total>
@@ -116,7 +50,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Ex7">Ex7</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Ex8">Ex8</stat>
 </suite>
 </statistics>
 <errors>
